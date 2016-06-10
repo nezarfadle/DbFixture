@@ -1,0 +1,1 @@
+INSERT INTO articles values (1, 'PHP')

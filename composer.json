@@ -1,0 +1,22 @@
+{
+    "name": "nezarfadle/dbfixture",
+    "description": "Light fixtures loader",
+    "homepage": "https://github.com/nezarfadle/dbfixture",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nezar Fadle",
+            "email": "nezarfadle@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^5.3",
+        "phpunit/dbunit": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DbFixture\\": "./src"
+        }
+    }
+}
