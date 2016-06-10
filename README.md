@@ -8,7 +8,7 @@ This is a light class library working as SQL scripts Executer.
 
 # Usage
 
-1. Create a Database and name it ``` dbfixture ``` ( This could be any name ):
+1. Create a Database and name it ``` dbfixture ``` ( This could be any name ).
 
 2. Create a folder and name it ``` fixtures ``` and save your fixtures files inside it:
 ```
