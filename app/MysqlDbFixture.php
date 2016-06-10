@@ -1,4 +1,6 @@
-<?php  namespace DbFixture;
+<?php  namespace App;
+
+use DbFixture\DbFixture;
 
 class MysqlDbFixture extends DbFixture
 {

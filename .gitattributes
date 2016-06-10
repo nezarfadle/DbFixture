@@ -3,5 +3,4 @@
 .phpunit.xml export-ignore
 tests/ export-ignore export-ignore
 fixtures/ export-ignore
-src/MysqlDbFixture.php export-ignore
-src/DbFixture_TestCase.php export-ignore
+app/ export-ignore

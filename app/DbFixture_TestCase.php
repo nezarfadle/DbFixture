@@ -1,8 +1,8 @@
-<?php  namespace DbFixture;
+<?php  namespace App;
 
 abstract class DbFixture_TestCase extends \PHPUnit_Extensions_Database_TestCase
 {
-	private $pdo;
+	protected $pdo;
 
 	public function __construct()
 	{

@@ -1,7 +1,7 @@
 <?php  
 
-use DbFixture\MysqlDbFixture;
-use DbFixture\DbFixture_TestCase;
+use App\MysqlDbFixture;
+use App\DbFixture_TestCase;
 
 class MysqlDbFixtureTest extends DbFixture_TestCase
 {
