@@ -11,7 +11,7 @@ This is a light class library working as SQL scripts Executer.
 1. Create a Database and name it ``` dbfixture ``` ( This could be any name ).
 
 2. Create a folder and name it ``` fixtures ``` and save your fixtures files inside it:
-```
+```sql
 fixtures/articles.create.sql
 ############################
 
@@ -22,14 +22,14 @@ CREATE TABLE IF NOT EXISTS `articles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
 
-```
+```sql
 fixtures/articles.drop.sql
 ##########################
 
 DROP TABLE IF EXISTS articles;
 ```
 
-```
+```sql
 fixtures/articles.insert.sql
 ############################
 
@@ -37,7 +37,7 @@ INSERT INTO articles values (1, 'PHP')
 ```
 3. Create your own Fixture Class by extending the ``` DbFixture ``` class:
 
-```
+```php
 // MysqlDbFixture.php 
 <?php
 
@@ -63,7 +63,7 @@ class MysqlDbFixture extends DbFixture
 ```
 instantiate a new ``` MysqlDbFixture ``` instance and start using it:
 
-```
+```php
 $fixture = new MysqlDbFixture( 'mysql:host=localhost;dbname=dbfixture', 'root', 'password' );
 
 $fixture->runScript('fixtures/articles.create.sql');
@@ -72,7 +72,7 @@ $fixture->runScript('fixtures/articles.drop.sql');
 
 ```
 Use the ``` basePath ``` method to tell the DbFixture where to find the fixtures files:
-```
+```php
 $fixture->basePath(__DIR__ . '/fixtures/'); 
 
 $fixture->runScript('articles.create.sql');
@@ -82,7 +82,7 @@ $fixture->runScript('articles.drop.sql');
 ```
 To load multiple scripts use ``` runScripts ``` method:
 
-```
+```php
 $fixture->basePath(__DIR__ . '/fixtures/'); 
 
 $fixture->runScripts( 
@@ -96,7 +96,7 @@ $fixture->runScripts(
 ```
 
 Use the ``` run ``` method to execute raw SQL statment:
-```
+```php
 $fixture->run( "INSERT INTO articles values (1, 'PHP')" );
 ```
 
@@ -104,7 +104,7 @@ $fixture->run( "INSERT INTO articles values (1, 'PHP')" );
 
 1. Create a database and name it dbfixture ( This could be any name )
 2. Edit the ``` tests/MysqlDbFixtureTest.php ```  file, And set the database credentials ( Line 12 )
-```
+```php
  $pdo = new PDO('mysql:host=localhost;dbname=dbfixture', 'root', 'password');
  ```
  3. run ``` phpunit ``` :
