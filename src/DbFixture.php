@@ -44,6 +44,7 @@ abstract class DbFixture
 	public function basePath($path)
 	{
 		$this->basePath = trim( $path );
+		return $this;
 	}
 	
 	/**
