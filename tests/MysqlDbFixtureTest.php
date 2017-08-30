@@ -1,15 +1,43 @@
 <?php  
 
+
 use App\MysqlDbFixture;
 use App\DbFixture_TestCase;
 
 class MysqlDbFixtureTest extends DbFixture_TestCase
 {
 	private $fixture;
+	private $connection;
+
+	public function __construct()
+	{
+		$this->connection = include __DIR__ . '/config.php';
+		parent::__construct();
+	}
+	
+	private function host()
+	{
+		return $this->connection['mysql']['host'];
+	}
+
+	private function db()
+	{
+		return $this->connection['mysql']['db'];
+	}
+
+	private function username()
+	{
+		return $this->connection['mysql']['username'];
+	}
+
+	private function password()
+	{
+		return $this->connection['mysql']['password'];
+	}
 
 	public function getConnection()
     {
-        $pdo = new PDO('mysql:host=localhost;dbname=dbfixture', 'root', 'password');
+        $pdo = new PDO("mysql:host={$this->host()};dbname={$this->db()}", $this->username(), $this->password());
         return $this->createDefaultDBConnection($pdo);
     }
 
@@ -24,9 +52,9 @@ class MysqlDbFixtureTest extends DbFixture_TestCase
     public function setup()
     {
     	$this->fixture = new MysqlDbFixture( 
-			'mysql:host=localhost;dbname=dbfixture',
-			'root',
-			'password',
+			"mysql:host={$this->host()};dbname={$this->db()}",
+			$this->username(),
+			$this->password(),
 			__DIR__ . "/fixtures/"
 		);
     }

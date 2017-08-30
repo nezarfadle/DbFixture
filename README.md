@@ -103,7 +103,7 @@ $fixture->run( "INSERT INTO articles values (1, 'PHP')" );
 # How to run the Test
 
 1. Create a database and name it dbfixture ( This could be any name )
-2. Edit the ``` tests/MysqlDbFixtureTest.php ```  file, And set the database credentials ( Line 12 )
+2. Edit the ``` tests/config.php ```  file and set the database credentials
 ```php
  $pdo = new PDO('mysql:host=localhost;dbname=dbfixture', 'root', 'password');
  ```
