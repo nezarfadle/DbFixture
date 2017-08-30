@@ -104,10 +104,7 @@ $fixture->run( "INSERT INTO articles values (1, 'PHP')" );
 
 1. Create a database and name it dbfixture ( This could be any name )
 2. Edit the ``` tests/config.php ```  file and set the database credentials
-```php
- $pdo = new PDO('mysql:host=localhost;dbname=dbfixture', 'root', 'password');
- ```
- 3. run ``` phpunit ``` :
+3. run ``` phpunit ``` :
 
  ```
  phpunit
